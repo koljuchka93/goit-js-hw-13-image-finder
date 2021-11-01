@@ -1,21 +1,31 @@
-<!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Заголовок страницы</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
-      integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
-    <include src="./partials/example.html"></include>
 
-    <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+    integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
+    crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <title>Поиск картинок</title>
+</head>
+
+<body>
+  <div class="container">
+    <form class="search-form" id="search-form">
+      <input type="text" name="query" class="input" autocomplete="off" placeholder="Введи что будем искать..." />
+      <button type="submit" class="btn btn-submit">Поиск</button>
+      <p class="input-message"></p>
+    </form>
+    <ul class="gallery">
+      <!-- Список <li> с карточками изображений -->
+    </ul>
+    <button class="button btn btn-primary" data-action="load-more">
+      <span class="spinner-border spinner-border-sm spinner is-hiden" role="status" aria-hidden="true"></span>
+      <span class="label">Загрузить еще</span>
+    </button>
     <script src="./index.js"></script>
-  </body>
+  </div>
+</body>
+
 </html>
